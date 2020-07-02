@@ -23,8 +23,8 @@ def checkout() {
 ​
 def setUp() {
     stage('Install Configs') {
-        sh """rm -rf ${JENKINS_HOME}/casc_configs && \\
-            mv ./casc_configs ${JENKINS_HOME}"""
+        sh '''rm -rf ${JENKINS_HOME}/casc_configs && \\
+            mv ./casc_configs ${JENKINS_HOME}'''
         }
     }
 }
