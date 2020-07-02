@@ -23,7 +23,9 @@ def setUp() {
   stage('Install Configs') {
     sh """rm -rf ${JENKINS_HOME}/casc_configs
           mv ./casc_configs ${JENKINS_HOME}
-          chmod 447 ${CASC_JENKINS_CONFIG}/*"""
+          chmod 447 ${CASC_JENKINS_CONFIG}/*
+          cat ${CASC_JENKINS_CONFIG}/*
+          env"""
   }
 }
 def loadConf() {
