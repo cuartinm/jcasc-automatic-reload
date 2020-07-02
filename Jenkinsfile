@@ -16,12 +16,12 @@ pipeline {
       }
     }
 
-  // stages {
-  //   stage('set casc_configs path') {
-  //     steps {
-  //       checkout scm
-  //     }
-  //   }
+  stages {
+    stage('install configs') {
+      steps {
+        sh "mv casc_configs $JENKINS_HOME"
+      }
+    }
 
     stage('reload jcasc') {
       steps {
