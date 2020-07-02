@@ -13,19 +13,19 @@ node {
   }
 }
 def checkout() {
-    stage('Checkout') {
-        checkout scm
-    }
+  stage('Checkout') {
+    checkout scm
+  }
 } 
 def setUp() {
-    stage('Install Configs') {
-        sh """rm -rf ${JENKINS_HOME}/casc_configs
-              mv ./casc_configs ${JENKINS_HOME}
-              ls ${CASC_JENKINS_CONFIG}"""
-    }
+  stage('Install Configs') {
+    sh """rm -rf ${JENKINS_HOME}/casc_configs
+          mv ./casc_configs ${JENKINS_HOME}
+          chmod 447 ${CASC_JENKINS_CONFIG}/*"""
+  }
 }
 def loadConf() {
     stage('Relaod JCasC') {
-        ConfigurationAsCode.get().configure()
+      ConfigurationAsCode.get().configure()
     }
 }
