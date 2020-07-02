@@ -2,23 +2,28 @@
 
 import io.jenkins.plugins.casc.ConfigurationAsCode
 
-
-
 node {
+  withEnv(["CASC_JENKINS_CONFIG=${env.JENKINS_HOME}/casc_configs"])
   try {
     checkout()
+    reloadCasc()
   } catch(Exception e) {
-    currentBuild.result = 'FAILURE'
+    currentBuild.result = "FAILURE"
   } finally {
       cleanWs()
   }
 }
 
-
 def checkout() {
     stage('Checkout') {
         checkout scm
     }
+}
+
+def reloadCasc() {
+  stage("reload") {
+    ConfigurationAsCode.get().configure()
+  }
 }
 
 // pipeline {
