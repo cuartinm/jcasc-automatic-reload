@@ -28,7 +28,6 @@ def setUp() {
 }
 def loadConf() {
   stage('Relaod JCasC') {
-    response = ConfigurationAsCode.get().configure()
-    println(response)
+    ConfigurationAsCode.get().configure()
   }
 }
