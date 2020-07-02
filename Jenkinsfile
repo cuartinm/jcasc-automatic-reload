@@ -7,7 +7,7 @@ node {
   try { 
     checkout()
     setUp()
-    loadConfig() 
+    loadConf() 
   } catch(Exception e) {
     currentBuild.result = 'FAILURE'
   } finally {
