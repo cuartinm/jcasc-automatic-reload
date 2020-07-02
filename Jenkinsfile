@@ -5,6 +5,10 @@ import io.jenkins.plugins.casc.ConfigurationAsCode;
 pipeline {
   agent any
 
+  environment {
+    CASC_JENKINS_CONFIG = './casc_configs'
+  }
+
   stages {
     stage('checkout') {
       steps {
@@ -12,11 +16,16 @@ pipeline {
       }
     }
 
+  // stages {
+  //   stage('set casc_configs path') {
+  //     steps {
+  //       checkout scm
+  //     }
+  //   }
+
     stage('reload jcasc') {
       steps {
-        echo "${env.CASC_JENKINS_CONFIG}"
-        sh "ls /var/jenkins_home/casc_configs"
-        // ConfigurationAsCode.get().configure()
+        ConfigurationAsCode.get().configure()
       }
     }
   }
