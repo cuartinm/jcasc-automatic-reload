@@ -1,11 +1,11 @@
 #!/user/bin/env groovy
 ​
-import io.jenkins.plugins.casc.ConfigurationAsCode
+import io.jenkins.plugins.casc.ConfigurationAsCode;
 ​
 node {
+  withEnv(["CASC_JENKINS_CONFIG=${JENKINS_HOME}/casc_configs"])
   try { 
     checkout()
-    env.CASC_JENKINS_CONFIG="${JENKINS_HOME}/casc_configs" 
     setUp()
     loadConfig() 
   } catch(Exception e) {
