@@ -30,6 +30,6 @@ def setUp() {
 ​
 def loadConf() {
     stage('Relaod JCasC') {
-        ConfigurationAsCode.get().configure()
+        // ConfigurationAsCode.get().configure()
     }
 }
