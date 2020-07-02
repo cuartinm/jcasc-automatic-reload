@@ -1,5 +1,7 @@
 #!/user/bin/env groovy
-import io.jenkins.plugins.casc.ConfigurationAsCode
+
+import io.jenkins.plugins.casc.ConfigurationAsCode;
+
 node {
   try { 
     checkout()
@@ -25,7 +27,7 @@ def setUp() {
   }
 }
 def loadConf() {
-    stage('Relaod JCasC') {
-      ConfigurationAsCode.get().configure()
-    }
+  stage('Relaod JCasC') {
+    println(ConfigurationAsCode.get().configure())
+  }
 }
