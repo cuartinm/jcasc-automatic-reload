@@ -6,7 +6,7 @@ pipeline {
   agent any
 
   environment {
-    CASC_JENKINS_CONFIG = "$JENKINS_HOME/casc_configs"
+    CASC_JENKINS_CONFIG = ""
   }
 
   stages {
