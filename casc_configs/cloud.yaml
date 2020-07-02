@@ -5,7 +5,7 @@ jenkins:
     cluster: "arn:aws:ecs:us-east-2:489774021742:cluster/ecs-jenkins-fargate"
     credentialsId: "7a00a074-296f-458a-8ca5-e35e423399c1"
     jenkinsUrl: "https://nlb-jenkins.avaldigitallabs.com/jenkins/"
-    name: "ecs-fargate-cluster"
+    name: "ecs-fargate"
     regionName: "us-east-2"
     slaveTimeoutInSeconds: 300
     taskPollingIntervalInSeconds: 30
