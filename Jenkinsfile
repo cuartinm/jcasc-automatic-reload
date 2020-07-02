@@ -2,16 +2,18 @@
 
 import io.jenkins.plugins.casc.ConfigurationAsCode
 
+
+
 node {
   try {
     checkout()
-  } cath(Exception e) {
+  } catch(Exception e) {
     currentBuild.result = 'FAILURE'
   } finally {
-      notifyBuild(currentBuild.result)
       cleanWs()
   }
 }
+
 
 def checkout() {
     stage('Checkout') {
