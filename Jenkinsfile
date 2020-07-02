@@ -25,7 +25,8 @@ pipeline {
 
     stage('reload jcasc') {
       steps {
-        ConfigurationAsCode.get().configure()
+        sh "ls $CASC_JENKINS_CONFIG"
+        // ConfigurationAsCode.get().configure()
       }
     }
     
