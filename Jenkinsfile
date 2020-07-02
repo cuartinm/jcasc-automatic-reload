@@ -17,11 +17,11 @@ pipeline {
       }
     }
 
-    stage('install configs') {
-      steps {
-        sh "mv ./casc_configs $JENKINS_HOME"
-      }
-    }
+    // stage('install configs') {
+    //   steps {
+    //     sh "mv ./casc_configs $JENKINS_HOME"
+    //   }
+    // }
 
     stage('reload jcasc') {
       steps {
