@@ -1,7 +1,7 @@
 jenkins:
   clouds:
   - ecs:
-    allowedOverrides: "cpu"
+    allowedOverrides: "label"
     cluster: "arn:aws:ecs:us-east-2:489774021742:cluster/ecs-jenkins-fargate"
     credentialsId: "7a00a074-296f-458a-8ca5-e35e423399c1"
     jenkinsUrl: "https://nlb-jenkins.avaldigitallabs.com/jenkins/"
