@@ -9,21 +9,3 @@ jenkins:
     regionName: "us-east-2"
     slaveTimeoutInSeconds: 300
     taskPollingIntervalInSeconds: 30
-    templates:
-    - assignPublicIp: false
-      cpu: 0
-      executionRole: "arn:aws:iam::489774021742:role/task-exec-role"
-      label: "ecs-fargate-slaves"
-      launchType: "FARGATE"
-      memory: 12000
-      memoryReservation: 0
-      networkMode: "awsvpc"
-      platformVersion: "LATEST"
-      privileged: false
-      remoteFSRoot: "/home/jenkins"
-      securityGroups: "sg-069b3e46a059babd0"
-      sharedMemorySize: 0
-      subnets: "subnet-03fcf508e745d69e1,subnet-09031447e445632f7,subnet-0c77a8751b32c2d69"
-      taskrole: "arn:aws:iam::489774021742:role/task-exec-role"
-      templateName: "default"
-      uniqueRemoteFSRoot: false
